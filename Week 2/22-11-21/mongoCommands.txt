@@ -1,0 +1,38 @@
+
+Mongodb Commands:-
+
+1) use assignment.
+
+2) db.createCollection('users').
+
+3) db.users.insert({"first_name":"Sourav","last_name":"Das","email":"sd12062020@gmail.com","gender":"Male","ip_address":"1234","age":"22"}).
+
+4) db.users.insertMany(
+[
+{"first_name":"Sourav1","last_name":"Das","email":"sd12062021@gmail.com","gender":"Male","ip_address":"1234","age":"23"},
+{"first_name":"Sourav2","last_name":"Das","email":"sd12062022@gmail.com","gender":"Male","ip_address":"1234","age":"24"},
+{"first_name":"Sourav3","last_name":"Das","email":"sd12062023@gmail.com","gender":"Male","ip_address":"1234","age":"25"},
+{"first_name":"Sourav4","last_name":"Das","email":"sd12062024@gmail.com","gender":"Male","ip_address":"1234","age":"26"},
+{"first_name":"Sourav5","last_name":"Das","email":"sd12062025@gmail.com","gender":"Male","ip_address":"1234","age":"27"},
+{"first_name":"Sourav6","last_name":"Das","email":"sd12062026@gmail.com","gender":"Male","ip_address":"1234","age":"28"},
+{"first_name":"Sourav7","last_name":"Das","email":"sd12062027@gmail.com","gender":"Male","ip_address":"1234","age":"29"},
+{"first_name":"Sourav8","last_name":"Das","email":"sd12062028@gmail.com","gender":"Female","ip_address":"1234","age":"30"},
+{"first_name":"Sourav9","last_name":"Das","email":"sd12062029@gmail.com","gender":"Female","ip_address":"1234","age":"31"},
+{"first_name":"Sourav10","last_name":"Das","email":"sd12062030@gmail.com","gender":"Female","ip_address":"1234","age":"32"}
+
+]
+)
+
+5) db.users.find({})
+
+6) db.users.findOne({"first_name":"Sourav1"})
+
+7) db.users.update({"age": 32}, {$set: {"lastName": "Paul"}})
+
+8) db.users.updateMany({"gender":"Female"},{$set:{"ip_address":"5678"}})
+
+9) db.users.remove({"age":"32"})
+
+10) db.users.deleteOne({"ip_address":"1234"})
+
+11) db.users.deleteMany({"ip_address":"1234"})
