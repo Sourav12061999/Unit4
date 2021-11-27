@@ -4,6 +4,7 @@ const evalSchema = new mongoose.Schema({
   date: String,
   userId: {
     type: mongoose.Schema.Types.ObjectId,
+    ref: "users",
   },
   topic: String,
   studentId: [{ type: mongoose.Schema.Types.ObjectId, ref: "students" }],

@@ -1,7 +1,9 @@
 const express = require("express");
 
 const router = express.Router();
+const evaluations = require("../Schemas/evaluation.schema");
 const student = require("../Schemas/student.schema");
+const user = require("../Schemas/user.schema");
 
 router.get("/evaluationsId=:evalId", async (req, res) => {
   let data = await evaluations
@@ -17,7 +19,8 @@ router.get("/evaluationsId=:evalId", async (req, res) => {
     .populate("userId")
     .lean()
     .exec();
-  res.send(studentHighestScore);
+  let userData = await user.findById(studentHighestScore.userId).lean().exec();
+  res.send({ ...userData, batch: studentHighestScore.batch });
 });
 
 module.exports = router;

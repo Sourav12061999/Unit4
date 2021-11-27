@@ -7,6 +7,6 @@ const userSchema = new mongoose.Schema({
   date_of_birth: String,
 });
 
-const user = mongoose.model("userss", userSchema);
+const user = mongoose.model("users", userSchema);
 
 module.exports = user;

@@ -5,7 +5,7 @@ const evaluations = require("../Schemas/evaluation.schema");
 router.get("/evaluationsId=:evalId", async (req, res) => {
   try {
     let data = await evaluations
-      .find({ evalId: req.params.evalId })
+      .findById(req.params.evalId)
       .populate("userId")
       .populate("studentId")
       .populate({
