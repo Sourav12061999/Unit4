@@ -19,8 +19,9 @@ router.get("/evaluationsId=:evalId", async (req, res) => {
     .populate("userId")
     .lean()
     .exec();
-  let userData = await user.findById(studentHighestScore.userId).lean().exec();
-  res.send({ ...userData, batch: studentHighestScore.batch });
+  // let userData = await user.findById(studentHighestScore.userId).lean().exec();
+  // res.send({ ...userData, batch: studentHighestScore.batch });
+  res.send(studentHighestScore);
 });
 
 module.exports = router;
